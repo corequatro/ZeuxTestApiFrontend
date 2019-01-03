@@ -40,6 +40,11 @@
       "provider": "cdnjs",
       "library": "ngStorage@0.3.11",
       "destination": "wwwroot/lib/ngStorage/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@4.7.0",
+      "destination": "wwwroot/lib/font-awesome/"
     }
   ]
 }

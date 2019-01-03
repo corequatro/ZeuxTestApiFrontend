@@ -1,0 +1,166 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            Logo
+        </a>
+        <spn class="text-white text-uppercase">Assets</spn>
+        <a href="#/login" class="navbar-brand float-left">
+            <i class="fa fa-sign-out"></i>
+        </a>
+
+    </nav>
+    <ul class="nav justify-content-center navbar-dark bg-dark">
+        <li class="nav-item" ng-click="show('assets')">
+            <div class="nav-link text-white">My Assets</div>
+        </li>
+        <li class="nav-item" ng-click="show('opportunities')">
+            <div class="nav-link text-white text-muted">Opportunities</div>
+        </li>
+    </ul>
+
+    <div ng-show="currentTab ==='assets'">
+        <div>
+            <div class="earning-ballance">
+                <ul class="list-unstyled text-center">
+                    <li>
+                        <span style="color: #3C9282; font-size: 2em;">+3%</span>
+                    </li>
+                    <li>
+                        <span style="color: #3C9282; font-size: 1.2em;">Earning Balance </span>
+                    </li>
+                    <li>
+                        <span class="text-white" style="font-size: 2em;">$10000</span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link pointer" ng-class="{'text-underline': currentAsset == 'All'}" ng-click="getUserAssets('')">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pointer" ng-click="getUserAssets('Savings')">Savings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pointer" ng-click="getUserAssets('P2P')">P2P</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pointer " ng-click="getUserAssets('Funds')">Funds</a>
+                </li>
+            </ul>
+
+
+            <div class="asset-div">
+                <ul class="list-group">
+                    <li ng-repeat="asset in userAssets" class="list-group-item d-flex justify-content-between align-items-center">
+                        <ul class="list-unstyled">
+                            <li>
+                                <span class="text-muted"> {{typeToString(asset.productType)}}</span>
+                            </li>
+                            <li>
+                                {{asset.name}}
+                            </li>
+                            <li>
+                                <span class="text-muted">{{asset.returns}}% Yearly</span>
+
+                            </li>
+                        </ul>
+                        <span class="badge badge-pill">{{asset.price}}$</span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div ng-show="currentTab==='opportunities'">
+        <h1 class="text-center">  opportunities are on the way</h1>
+    </div>
+
+
+</div>
+
+
+
+
+<style>
+    .text-underline {
+        text-decoration: underline !important;
+    }
+
+    .earning-ballance {
+        min-height: 235px;
+        background-color: #1B1826;
+    }
+
+
+    .list-group-item {
+        border-bottom: 1px solid #e3dcdc !important;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .asset-div {
+        max-height: 380px;
+        overflow-y: scroll;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 95px; /* Set the fixed height of the footer here */
+        line-height: 50px; /* Vertically center the text there */
+        background-color: #FAFAFC;
+    }
+
+    .footer-icon-icon {
+        font-size: 2em;
+    }
+
+    .footer-icon-text {
+        position: absolute;
+        margin-top: 25px;
+        margin-left: -35px;
+    }
+
+    .footer-nav > li {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+</style>
+<footer class="footer">
+
+    <nav class="navbar navbar-light justify-content-center">
+
+        <ul class="nav justify-content-center footer-nav">
+            <li class="nav-item">
+                <a class="nav-link active text-dark text-muted" href="#">
+                    <i class="footer-icon-icon fa fa-home"></i><span class="footer-icon-text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link text-dark text-muted" href="#">
+                    <i class="footer-icon-icon  fa fa-usd"></i><span class="footer-icon-text">Spending</span>
+                </a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link text-dark text-muted" href="#">
+                    <i class="footer-icon-icon  fa fa-line-chart"></i><span class="footer-icon-text">Assets</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark text-muted" href="#">
+                    <i class="footer-icon-icon  fa fa-exchange"></i><span class="footer-icon-text">Payment</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</footer>
