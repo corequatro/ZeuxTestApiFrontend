@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "angular.js@1.5.3",
+      "destination": "wwwroot/lib/angular.js/",
+      "files": [
+        "angular.min.js",
+        "angular.min.js.map",
+        "angular-route.min.js",
+        "angular-messages.min.js"
+
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "twitter-bootstrap@4.1.1",
+      "destination": "wwwroot/lib/twitter-bootstrap/",
+      "files": [
+        "css/bootstrap.min.css",
+        "js/bootstrap.min.js"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "jquery@3.3.1",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "jquery.min.js",
+        "jquery.min.map"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "angular-ui-router@1.0.20",
+      "destination": "wwwroot/lib/angular-ui-router/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "ngStorage@0.3.11",
+      "destination": "wwwroot/lib/ngStorage/"
+    }
+  ]
+}

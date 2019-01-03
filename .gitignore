@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/ZeuxAngularJsWebApp/bin/Debug/netcoreapp2.2
+/ZeuxAngularJsWebApp/obj
