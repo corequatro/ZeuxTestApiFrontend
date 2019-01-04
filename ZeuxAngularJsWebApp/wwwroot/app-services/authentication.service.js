@@ -1,9 +1,5 @@
 (function () {
-    'use strict';
-
-    angular
-        .module('app')
-        .factory('AuthenticationService', Service);
+    angular.module('app').factory('AuthenticationService', Service);
 
     function Service($http, $localStorage,config) {
         var service = {};
@@ -32,8 +28,7 @@
                         callback(false);
                     }
                 }).error(function (data, status, headers, config) {
-                    console.log(status);
-                    console.log(data);
+                 
                 });
         }
 

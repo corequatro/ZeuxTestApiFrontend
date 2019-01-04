@@ -1,54 +1,31 @@
 <div class="container-fluid">
-
-    <nav class="row fixed-top" style="background-color: #100f17b8 !important">
-
+    <nav class="row fixed-top nav-block-top" id="nav-block-top">
         <div class="col-sm">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand text-white text-uppercase" href="#">
                 Logo
             </a>
         </div>
         <div class="col-sm text-center">
             <span class="text-white text-uppercase">Assets</span>
         </div>
-        <div class="col-sm text-right">
+        <div class="col-sm text-right ">
             <a href="#/login" class="navbar-brand">
-                <i class="fa fa-sign-out"></i>
+                <i class="text-white fa fa-sign-out"></i>
             </a>
         </div>
         <div class="w-100"></div>
         <div class="col">
             <ul class="d-flex justify-content-center">
                 <li class="nav-item d-block" ng-click="show('assets')" ng-class="{'header-nav-item-active': currentTab.value === 'assets'}">
-                    <div class="nav-link text-white" ng-class="{'text-muted': currentTab.value !== 'assets'}">My Assets</div>
+                    <div class="nav-link pointer text-white" ng-class="{'text-muted': currentTab.value !== 'assets'}">My Assets</div>
                 </li>
                 <li class="nav-item d-block" ng-class="{'header-nav-item-active': currentTab.value === 'opportunities'}" ng-click="show('opportunities')">
-                    <div class="nav-link text-white " ng-class="{'text-muted': currentTab.value !== 'opportunities'}">Opportunities</div>
+                    <div class="nav-link pointer text-white " ng-class="{'text-muted': currentTab.value !== 'opportunities'}">Opportunities</div>
                 </li>
             </ul>
         </div>
     </nav>
-
-    <!--<nav class="navbar   fixed-top header-nav-custom" style="background-color: #100f17b8 !important">
-        <div class="flex-row">
-
-
-
-        </div>
-        <div class="flex-row">
-
-        </div>
-
-    </nav>-->
-    <!--<nav class="navbar header-nav-custom fixed-top" style="margin-top: 56px;">
-
-
-
-
-    </nav>-->
-
-
-    <div class="row align-items-center " style="background-color: #1B1A27" ng-show="currentTab.value ==='assets'">
-
+    <div class="row align-items-center balance-info-color" ng-show="currentTab.value ==='assets'">
         <div class="col align-self-center text-center pb-3 balance-info">
             <h2>
                 +3%
@@ -57,22 +34,9 @@
                 Earning Balance
             </p>
             <h3>
-                $10000
+                $10012.53
             </h3>
         </div>
-        <!--<ul class="list-unstyled text-center">
-            <li>
-                <span style="color: #3C9282; font-size: 2em;"></span>
-            </li>
-            <li>
-                <span style="color: #3C9282; font-size: 1.2em;"></span>
-            </li>
-            <li>
-                <span class="text-white" style="font-size: 2em;"></span>
-            </li>
-        </ul>-->
-
-
     </div>
     <div class="row mt-5" ng-show="currentTab.value ==='assets'">
         <div class="col" id="assetsFilter">
@@ -96,7 +60,7 @@
         <div class="col">
             <div class="">
                 <ul class="list-group">
-                    <li ng-repeat="asset in userAssets" class="list-group-item d-flex justify-content-between align-items-center">
+                    <li ng-repeat="asset in userAssets" class="list-group-item d-flex justify-content-between align-items-center asset-item-li">
                         <ul class="list-unstyled">
                             <li>
                                 <span class="text-muted"> {{typeToString(asset.productType)}}</span>
@@ -119,12 +83,12 @@
 
     </div>
 
-    
+
     <div ng-show="currentTab==='opportunities'">
         <h1 class="text-center"> opportunities are on the way</h1>
     </div>
-    
-    
+
+
     <footer class="row footer-block d-flex justify-content-center">
         <div class="col">
             <nav class="navbar navbar-light justify-content-center">
@@ -155,21 +119,22 @@
                 </ul>
             </nav>
         </div>
-        
-
     </footer>
 </div>
 <script>
     window.onscroll = function() {myFunction()};
 
     var header = document.getElementById("assetsFilter");
+    var navBlock = document.getElementById("nav-block-top");
     var sticky = header.offsetTop;
 
     function myFunction() {
         if (window.pageYOffset > sticky) {
             header.classList.add("sticky");
+            navBlock.classList.add("active-nav-color");
         } else {
             header.classList.remove("sticky");
+            navBlock.classList.remove("active-nav-color");
         }
     }
 </script>

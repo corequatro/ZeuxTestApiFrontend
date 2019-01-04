@@ -1,6 +1,7 @@
 <style>
     .login-wrapper {
-        margin-top: 20%
+        margin-top: 20%;
+        background-color: #1a1926;
     }
 
     .form-signin {
@@ -20,16 +21,24 @@
         text-align: center;
         vertical-align: middle;
     }
+
+    html {
+        background-color: #1a1926;
+    }
+
+    .button-custom-color {
+        background-color: #58F7CF;
+    }
 </style>
 
 <div class="container-fluid login-wrapper" align="center">
-    <form class="form-signin" ng-submit="vm.login()">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal text-white">ZEUX</h1>
         <label for="inputEmail" class="sr-only">User Login</label>
-        <input type="text" ng-model="vm.username" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input type="text" ng-model="username" id="inputEmail" class="form-control" placeholder="Email address" >
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" ng-model="vm.password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <button ng-click="login()" class="btn btn-lg btn-dark btn-block">Login</button>
+        <input type="password" ng-model="password" id="inputPassword" class="form-control" placeholder="Password">
+        <button ng-click="login()" class="btn btn-lg button-custom-color btn-block">Login</button>
     </form>
 </div>
 

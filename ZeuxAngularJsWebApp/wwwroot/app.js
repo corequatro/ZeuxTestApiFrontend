@@ -1,13 +1,10 @@
 (function () {
-    'use strict';
-
+   
     angular
         .module('app', ['ui.router', 'ngMessages', 'ngStorage'])
         .constant('config', {
             apiUrl: "http://localhost:2845/api/v1"
-        })
-        .config(config)
-        .run(run);
+        }).config(config).run(run);
 
     function config($stateProvider, $urlRouterProvider) {
         // default route
