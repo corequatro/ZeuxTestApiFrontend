@@ -34,6 +34,7 @@ namespace ZeuxAngularJsWebApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -41,7 +42,9 @@ namespace ZeuxAngularJsWebApp
             else
             {
                 app.UseExceptionHandler("/Error");
+            
             }
+            app.UseHsts();
             app.Use(async (context, next) =>
             {
                 await next();
@@ -52,11 +55,11 @@ namespace ZeuxAngularJsWebApp
                     await next();
                 }
             });
-
-            app.UseHttpsRedirection();
+ 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
             options.DefaultFileNames.Add("/index.html");
+            app.UseHttpsRedirection();
             app.UseDefaultFiles(options);
             app.UseStaticFiles();
             app.UseCookiePolicy();

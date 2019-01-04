@@ -29,7 +29,7 @@ angular.module('app').controller('HomeController', ['$scope', '$http', '$timeout
         $scope.currentAsset = assetType;
         $http({
             method: 'GET',
-            url: "http://localhost:2845/api/v1/UserAssetsApi/getAsync?ProductType=" + assetType
+            url: "https://localhost:44392/api/v1/UserAssetsApi/getAsync?ProductType=" + assetType
 
         }).then(function (resp) {
             $scope.userAssets = resp.data;

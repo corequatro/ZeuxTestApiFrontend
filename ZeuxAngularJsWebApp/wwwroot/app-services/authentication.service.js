@@ -15,11 +15,9 @@
 
         function Login(username, password, callback) {
 
-            //$http.post('http://localhost:2845/api/v1/UserAuthApi/generateToken', { Username: "testUser", Password: "testPassword" }).then(function (response) {
-            //    console.log(response);
-            //});
+      
 
-            $http.post('http://localhost:2845/api/v1/UserAuthApi/generateToken', { Username: "testUser", Password: "testPassword" })
+            $http.post('https://localhost:44392/api/v1/UserAuthApi/generateToken', { Username: "testUser", Password: "testPassword" })
                 .success(function (response) {
                     // login successful if there's a token in the response
                     if (response.token) {
@@ -35,6 +33,9 @@
                         // execute callback with false to indicate failed login
                         callback(false);
                     }
+                }).error(function (data, status, headers, config) {
+                    console.log(status);
+                    console.log(data);
                 });
         }
 
