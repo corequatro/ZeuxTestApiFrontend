@@ -1,17 +1,16 @@
-angular.module('app').controller('HomeController', ['$scope', '$http', '$timeout', '$rootScope', function ($scope, $http, $timeout, $rootScope) {
+angular.module('app').controller('HomeController', ['$scope', '$http', '$timeout', '$rootScope', 'config', function ($scope, $http, $timeout, $rootScope, config) {
 
     $scope.userAssets = [];
 
-    $scope.currentTab = 'assets';
+    $scope.currentTab ={value: 'assets'}
     $scope.show = function (tabType) {
-        $scope.currentTab = tabType;
-        console.log(tabType);
-       
+        $scope.currentTab = { value: tabType.toString() };
     }
+
     $scope.getDefaultUserAsset = function () {
         $scope.getUserAssets("");
     }
-
+    $scope.activeAsset = { value: 'All' }
     $scope.typeToString = function (type) {
         if (type === 0) {
             return "Savings";
@@ -27,9 +26,11 @@ angular.module('app').controller('HomeController', ['$scope', '$http', '$timeout
 
     $scope.getUserAssets = function (assetType) {
         $scope.currentAsset = assetType;
+        $scope.activeAsset = { value: assetType === "" ? "All" : assetType.toString() };
+
         $http({
             method: 'GET',
-            url: "http://localhost:2845/api/v1/UserAssetsApi/getAsync?ProductType=" + assetType
+            url: config.apiUrl + "/UserAssetsApi/getAsync?ProductType=" + assetType
 
         }).then(function (resp) {
             $scope.userAssets = resp.data;

@@ -5,7 +5,7 @@
         .module('app')
         .factory('AuthenticationService', Service);
 
-    function Service($http, $localStorage) {
+    function Service($http, $localStorage,config) {
         var service = {};
 
         service.Login = Login;
@@ -14,13 +14,8 @@
         return service;
 
         function Login(username, password, callback) {
-
-            //$http.defaults.headers.common = {};
-            //$http.defaults.headers.post = {};
-            //$http.defaults.headers.put = {};
-            //$http.defaults.headers.patch = {};
-
-            $http.post('http://localhost:2845/api/v1/UserAuthApi/generateToken', { Username: "testUser", Password: "testPassword" })
+            
+            $http.post(config.apiUrl+'/UserAuthApi/generateToken', { Username: "testUser", Password: "testPassword" })
                 .success(function (response) {
                     // login successful if there's a token in the response
                     if (response.token) {

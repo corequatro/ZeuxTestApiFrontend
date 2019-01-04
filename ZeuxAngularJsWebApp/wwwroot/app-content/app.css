@@ -1,3 +1,74 @@
-.help-block {
-    font-size: 12px;
+.header-nav-custom {
+    background-color: #100f17b8 !important
+}
+
+.header-nav-item-active {
+    border-bottom: 1px solid #58F7CF;
+}
+
+.earning-ballance {
+    min-height: 235px;
+    background-color: #1B1826;
+}
+
+.asset-div {
+    max-height: 380px;
+    overflow-y: scroll;
+}
+
+.footer-block {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 95px; /* Set the fixed height of the footer here */
+    line-height: 50px; /* Vertically center the text there */
+    background-color: #FAFAFC;
+}
+
+.footer-icon-icon {
+    font-size: 2em;
+}
+
+
+.footer-icon-text {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: -35px;
+}
+
+.footer-nav > li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+.balance-info {
+    padding-top: 150px;
+}
+
+.balance-info h2, .balance-info p {
+    color: #58F7CF;
+}
+
+.balance-info p {
+    font-size: 1em;
+}
+
+.balance-info h3 {
+    color: #fff;
+}
+
+.sticky {
+    z-index: 200;
+    position: fixed;
+    top: 97px;
+    width: 100%;
+    background-color: #fafafc;
+}
+
+
+.sticky + .content {
+    padding-top: 102px;
 }
